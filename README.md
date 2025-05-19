@@ -1,1 +1,1 @@
-# odin-bst
+This project is to build a balanced binary search tree.
