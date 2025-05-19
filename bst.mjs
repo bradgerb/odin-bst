@@ -17,9 +17,22 @@ class Tree {
 function buildTree(array) {
     let root;
     let sortedArray = mergeSort(array);
-    let uniqueArray = sortedArray.filter((item, index) => sortedArray.indexOf(item) === index);
+    //remove duplicates
+    sortedArray = sortedArray.filter((item, index) => sortedArray.indexOf(item) === index);
+   
+    root = sortedArrayToBST(sortedArray, 0, sortedArray.length - 1);
     
-    console.log(uniqueArray);
+    return root
+}
+
+function sortedArrayToBST(sortedArray, start, end) {
+    if (start > end) return null;
+
+    let mid = start + Math.floor((end - start) / 2);
+    let root = new Node(sortedArray[mid]);
+
+    root.left = sortedArrayToBST(sortedArray, start, mid - 1);
+    root.right = sortedArrayToBST(sortedArray, mid + 1, end);
 
     return root
 }
