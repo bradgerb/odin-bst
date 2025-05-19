@@ -1,3 +1,5 @@
+import mergeSort from "./sort.mjs";
+
 class Node {
     constructor(value) {
       this.value = value;
