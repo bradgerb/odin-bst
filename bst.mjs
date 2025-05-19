@@ -15,7 +15,9 @@ class Tree {
 function buildTree(array) {
     let root;
 
-    
+
     
     return root
 }
+
+export default buildTree
