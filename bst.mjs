@@ -28,7 +28,7 @@ function buildTree(array) {
 function sortedArrayToBST(sortedArray, start, end) {
     if (start > end) return null;
 
-    let mid = start + Math.floor((end - start) / 2);
+    let mid = Math.floor((start + end) / 2);
     let root = new Node(sortedArray[mid]);
 
     root.left = sortedArrayToBST(sortedArray, start, mid - 1);
