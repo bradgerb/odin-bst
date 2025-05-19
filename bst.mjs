@@ -16,9 +16,11 @@ class Tree {
 
 function buildTree(array) {
     let root;
-
-
+    let sortedArray = mergeSort(array);
+    let uniqueArray = sortedArray.filter((item, index) => sortedArray.indexOf(item) === index);
     
+    console.log(uniqueArray);
+
     return root
 }
 
