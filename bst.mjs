@@ -7,8 +7,15 @@ class Node {
 }
 
 class Tree {
-    constructor(array) {
-        this.array = array;
-        this.root = buildTree();
+    constructor() {
+        this.root = buildTree(array);
     }
+}
+
+function buildTree(array) {
+    let root;
+
+    
+    
+    return root
 }
