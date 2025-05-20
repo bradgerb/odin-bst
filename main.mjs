@@ -17,3 +17,5 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 
 let testTree = new Tree(testData);
 prettyPrint(testTree.root);
+testTree.insert(1000);
+prettyPrint(testTree.root);
