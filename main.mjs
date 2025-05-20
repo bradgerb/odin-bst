@@ -1,4 +1,4 @@
-import buildTree from "./bst.mjs";
+import Tree from "./bst.mjs";
 
 let testData = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 
@@ -15,4 +15,5 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
     }
 };
 
-prettyPrint(buildTree(testData));
+let testTree = new Tree(testData);
+prettyPrint(testTree.root);
