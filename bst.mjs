@@ -2,15 +2,33 @@ import mergeSort from "./sort.mjs";
 
 class Node {
     constructor(value) {
-      this.value = value;
-      this.left = null;
-      this.right = null;
+        this.value = value;
+        this.left = null;
+        this.right = null;
     }
 }
 
 class Tree {
-    constructor() {
+    constructor(array) {
         this.root = buildTree(array);
+    }
+    
+    insert(value, node = this.root) {
+        if (node === null) {
+            return new Node(value);
+        }
+
+        if (value === node.value) {
+            return node
+        }
+
+        if (value < node.value) {
+            node.left = this.insert(value, node.left);
+        } else if (value > node.value) {
+            node.right = this.insert(value, node.right);
+        }
+
+        return node
     }
 }
 
@@ -37,4 +55,4 @@ function sortedArrayToBST(sortedArray, start, end) {
     return root
 }
 
-export default buildTree
+export default Tree
