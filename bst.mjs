@@ -49,8 +49,19 @@ class Tree {
                 return node.left
             }
 
-            
+            let previousNode = this.getPreviousNode(node);
+            node.value = previousNode.value;
+            node.right = this.remove(previousNode.value, node.right);
         }
+        return node
+    }
+
+    getPreviousNode(currentNode) {
+        currentNode = currentNode.right;
+        while (currentNode !== null && currentNode.left !== null) {
+            currentNode = currentNode.left;
+        }
+        return currentNode
     }
 }
 
