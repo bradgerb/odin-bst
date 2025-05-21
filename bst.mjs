@@ -63,6 +63,23 @@ class Tree {
         }
         return currentNode
     }
+
+    find(value, node = this.root) {
+        if (node === null) {
+            return null
+        }
+
+        if (value === node.value) {
+            return node
+        }
+
+        if (value < node.value) {
+            node = this.find(value, node.left);
+        } else if (value > node.value) {
+            node = this.find(value, node.right);
+        }
+        return node
+    }
 }
 
 function buildTree(array) {
