@@ -16,6 +16,17 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 };
 
 let testTree = new Tree(testData);
-prettyPrint(testTree.root);
+let printTree = testTree.root;
+prettyPrint(printTree);
 testTree.insert(1000);
-prettyPrint(testTree.root);
+prettyPrint(printTree);
+testTree.remove(3);
+prettyPrint(printTree);
+testTree.remove(9);
+prettyPrint(printTree);
+testTree.remove(67);
+prettyPrint(printTree);
+testTree.remove(8);
+prettyPrint(printTree);
+testTree.remove(42);
+prettyPrint(printTree);
