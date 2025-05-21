@@ -30,6 +30,28 @@ class Tree {
 
         return node
     }
+
+    remove(value, node = this.root) {
+        if (node === null) {
+            return node
+        }
+
+        if (value < node.value) {
+            node.left = this.remove(value, node.left);
+        } else if (value > node.value) {
+            node.right = this.remove(value, node.right);
+        } else {
+            if (node.left === null) {
+                return node.right
+            }
+
+            if (node.right === null) {
+                return node.left
+            }
+
+            
+        }
+    }
 }
 
 function buildTree(array) {
