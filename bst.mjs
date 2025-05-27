@@ -128,7 +128,7 @@ class Tree {
             if(node.right !== null) {
                 recursionPreOrder(node.right);
             }
-            
+
             return
         }
 
@@ -197,6 +197,27 @@ class Tree {
         }
 
         recursionPreOrder(this.root);
+    }
+ 
+    height(value) {
+        
+        let node = this.find(value);
+
+        if (node === null) {
+            return null
+        }
+
+        const recursionHeight = (node)=> {
+            if (node === null) {
+                return null
+            }
+    
+            let leftHeight = recursionHeight(node.left);
+            let rightHeight = recursionHeight(node.right);
+
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
+        return recursionHeight(node) - 1;
     }
 }
 
