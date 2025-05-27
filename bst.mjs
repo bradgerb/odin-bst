@@ -219,6 +219,14 @@ class Tree {
         }
         return recursionHeight(node) - 1;
     }
+
+    depth(value) {
+        let node = this.find(value);
+
+        if (node === null) {
+            return null
+        }
+    }
 }
 
 function buildTree(array) {
