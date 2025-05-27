@@ -49,6 +49,11 @@ prettyPrint(printTree);
 //   console.log(node.value);
 // });
 
-testTree.postOrder((node)=> {
-  console.log(node.value);
-});
+// testTree.postOrder((node)=> {
+//   console.log(node.value);
+// });
+
+console.log(testTree.height(8));
+console.log(testTree.height(1));
+console.log(testTree.height(6345));
+console.log(testTree.height(92387));
