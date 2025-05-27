@@ -80,6 +80,28 @@ class Tree {
         }
         return node
     }
+
+    levelOrder(callback) {
+
+        if (typeof callback !== 'function') {
+            throw new Error('Callback is not defined as a function');
+        }
+
+        let queue = [this.root];
+
+        while (queue.length > 0) {
+            let currentNode = queue.shift();
+
+            callback(currentNode);
+            
+            if (currentNode.left !== null) {
+                queue.push(currentNode.left);
+            }
+            if (currentNode.right !== null) {
+                queue.push(currentNode.right);
+            }
+        }
+    }
 }
 
 function buildTree(array) {
