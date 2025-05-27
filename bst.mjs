@@ -102,6 +102,33 @@ class Tree {
             }
         }
     }
+
+    preOrder(callback) {
+
+        if (typeof callback !== 'function') {
+            throw new Error('Callback is not defined as a function');
+        }
+
+        function recursionPreOrder(node) {
+            if (node === null) {
+                return
+            }
+
+            callback(node);
+
+            if(node.left !== null) {
+                recursionPreOrder(node.left);
+            }
+
+            if(node.right !== null) {
+                recursionPreOrder(node.right);
+            }
+            
+            return recursionPreOrder(node);
+        }
+
+        recursionPreOrder(this.root);
+    }
 }
 
 function buildTree(array) {
