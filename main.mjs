@@ -30,6 +30,9 @@ prettyPrint(printTree);
 // prettyPrint(printTree);
 // testTree.remove(42);
 // prettyPrint(printTree);
-console.log(testTree.find(4));
-console.log(testTree.find(324));
-console.log(testTree.find(42));
+// console.log(testTree.find(4));
+// console.log(testTree.find(324));
+// console.log(testTree.find(42));
+testTree.levelOrder((node)=> {
+  console.log(node.value);
+});
