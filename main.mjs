@@ -18,8 +18,10 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 let testTree = new Tree(testData);
 let printTree = testTree.root;
 prettyPrint(printTree);
+
 // testTree.insert(1000);
 // prettyPrint(printTree);
+
 // testTree.remove(3);
 // prettyPrint(printTree);
 // testTree.remove(9);
@@ -30,9 +32,15 @@ prettyPrint(printTree);
 // prettyPrint(printTree);
 // testTree.remove(42);
 // prettyPrint(printTree);
+
 // console.log(testTree.find(4));
 // console.log(testTree.find(324));
 // console.log(testTree.find(42));
-testTree.levelOrder((node)=> {
+
+// testTree.levelOrder((node)=> {
+//   console.log(node.value);
+// });
+
+testTree.preOrder((node)=> {
   console.log(node.value);
 });
