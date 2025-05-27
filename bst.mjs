@@ -109,7 +109,12 @@ class Tree {
             throw new Error('Callback is not defined as a function');
         }
 
+        if (this.root === null) {
+            return null
+        }
+
         function recursionPreOrder(node) {
+
             if (node === null) {
                 return
             }
@@ -123,8 +128,7 @@ class Tree {
             if(node.right !== null) {
                 recursionPreOrder(node.right);
             }
-            
-            return recursionPreOrder(node);
+            return
         }
 
         recursionPreOrder(this.root);
