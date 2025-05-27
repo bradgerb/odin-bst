@@ -128,6 +128,71 @@ class Tree {
             if(node.right !== null) {
                 recursionPreOrder(node.right);
             }
+            
+            return
+        }
+
+        recursionPreOrder(this.root);
+    }
+
+    inOrder(callback) {
+
+        if (typeof callback !== 'function') {
+            throw new Error('Callback is not defined as a function');
+        }
+
+        if (this.root === null) {
+            return null
+        }
+
+        function recursionPreOrder(node) {
+
+            if (node === null) {
+                return
+            }
+
+            if(node.left !== null) {
+                recursionPreOrder(node.left);
+            }
+
+            callback(node);
+
+            if(node.right !== null) {
+                recursionPreOrder(node.right);
+            }
+
+            return
+        }
+
+        recursionPreOrder(this.root);
+    }
+
+    postOrder(callback) {
+
+        if (typeof callback !== 'function') {
+            throw new Error('Callback is not defined as a function');
+        }
+
+        if (this.root === null) {
+            return null
+        }
+
+        function recursionPreOrder(node) {
+
+            if (node === null) {
+                return
+            }
+
+            if(node.left !== null) {
+                recursionPreOrder(node.left);
+            }
+
+            if(node.right !== null) {
+                recursionPreOrder(node.right);
+            }
+
+            callback(node);
+
             return
         }
 

@@ -41,6 +41,14 @@ prettyPrint(printTree);
 //   console.log(node.value);
 // });
 
-testTree.preOrder((node)=> {
+// testTree.preOrder((node)=> {
+//   console.log(node.value);
+// });
+
+// testTree.inOrder((node)=> {
+//   console.log(node.value);
+// });
+
+testTree.postOrder((node)=> {
   console.log(node.value);
 });
