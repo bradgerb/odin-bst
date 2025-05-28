@@ -276,13 +276,18 @@ class Tree {
     }
 
     rebalance() {
+
+        if (this.root === null) {
+            return null
+        }
+
         let newTree = [];
 
         this.inOrder((currentNode)=> {
             newTree.push(currentNode.value);
         });
 
-        return buildTree(newTree);
+        this.root = buildTree(newTree);
     }
 }
 
