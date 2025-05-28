@@ -252,7 +252,7 @@ class Tree {
 
         let result = true
         
-        let checkFalse = this.levelOrder((currentNode)=> {
+        this.levelOrder((currentNode)=> {
 
             let leftHeight = 0
             let rightHeight = 0
@@ -276,7 +276,13 @@ class Tree {
     }
 
     rebalance() {
+        let newTree = [];
 
+        this.inOrder((currentNode)=> {
+            newTree.push(currentNode.value);
+        });
+
+        return buildTree(newTree);
     }
 }
 
