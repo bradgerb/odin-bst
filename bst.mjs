@@ -242,6 +242,42 @@ class Tree {
         }
         return null
     }
+
+    isBalanced() {
+        let currentNode = this.root;
+
+        if (currentNode === null) {
+            return null
+        }
+
+        let result = true
+        
+        let checkFalse = this.levelOrder((currentNode)=> {
+
+            let leftHeight = 0
+            let rightHeight = 0
+
+            if (currentNode.left) {
+                leftHeight = this.height(currentNode.left.value);
+            }
+            
+            if (currentNode.right) {
+                rightHeight = this.height(currentNode.right.value);
+            }
+
+            let heightDifference = Math.abs(leftHeight - rightHeight);
+
+            if (heightDifference > 1) {
+                return false
+            }
+        });
+        
+        if (checkFalse === false) {
+            result = false;
+        }
+
+        return result
+    }
 }
 
 function buildTree(array) {
