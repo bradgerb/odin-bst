@@ -58,8 +58,10 @@ prettyPrint(printTree);
 // console.log(testTree.height(6345));
 // console.log(testTree.height(92387));
 
-console.log(testTree.depth(8));
-console.log(testTree.depth(1));
-console.log(testTree.depth(6345));
-console.log(testTree.depth(92387));
-console.log(testTree.depth(5));
+// console.log(testTree.depth(8));
+// console.log(testTree.depth(1));
+// console.log(testTree.depth(6345));
+// console.log(testTree.depth(92387));
+// console.log(testTree.depth(5));
+
+console.log(testTree.isBalanced());
