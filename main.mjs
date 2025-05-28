@@ -73,4 +73,5 @@ testTree.insert(1000);
 testTree.insert(1001);
 testTree.insert(1002);
 testTree.insert(1003);
-prettyPrint(testTree.rebalance());
+testTree.rebalance();
+prettyPrint(testTree.root);
