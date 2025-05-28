@@ -223,7 +223,7 @@ class Tree {
     depth(value) {
         let node = this.find(value);
         let currentNode = this.root;
-        let depth;
+        let depth = 0;
 
         if (node === null || currentNode === null) {
             return null
@@ -233,7 +233,7 @@ class Tree {
             if (value < currentNode.value) {
                 depth++;
                 currentNode = currentNode.left;
-            } else if(currentNode > currentNode.value) {
+            } else if(value > currentNode.value) {
                 depth++;
                 currentNode = currentNode.right;
             } else {
