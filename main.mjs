@@ -65,3 +65,6 @@ prettyPrint(printTree);
 // console.log(testTree.depth(5));
 
 console.log(testTree.isBalanced());
+testTree.insert(1000);
+testTree.insert(1001);
+console.log(testTree.isBalanced());
