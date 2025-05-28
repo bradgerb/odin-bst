@@ -268,15 +268,15 @@ class Tree {
             let heightDifference = Math.abs(leftHeight - rightHeight);
 
             if (heightDifference > 1) {
-                return false
+                result = false;
             }
         });
-        
-        if (checkFalse === false) {
-            result = false;
-        }
 
         return result
+    }
+
+    rebalance() {
+
     }
 }
 
